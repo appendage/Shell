@@ -13,7 +13,7 @@ expect <<EOF &>/dev/null
 spawn ssh $ip ssh-keygen
 expect  {
 		"*yes/no*" {exp_send "yes\r";exp_continue}
-		"*password:" {exp_send "root123\r";exp_continue}
+		"*password:" {exp_send "m2a1s2u3000\r";exp_continue}
 		"id_rsa):" {exp_send "\r";exp_continue}
 		"passphrase):" {exp_send "\r";exp_continue}
 		"again:" {exp_send "\r";exp_continue}
@@ -32,7 +32,7 @@ expect <<EOF &>/dev/null
 spawn ssh $ip -t ssh-copy-id -i ~/.ssh/id_rsa.pub $ip2
 expect {
                 "*yes/no*" {exp_send "yes\r";exp_continue}
-                "*password:" {exp_send "root123\r";exp_continue}
+                "*password:" {exp_send "m2a1s2u3000\r";exp_continue}
 }
 EOF
 		done
